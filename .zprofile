@@ -2,8 +2,8 @@
 # The original version is saved in .zprofile.pysave
 PATH="/Library/Frameworks/Python.framework/Versions/3.13/bin:${PATH}"
 export PATH
-source <(fzf --zsh)
-
+#source <(fzf --zsh)
+PS1='%n@%m %~ %% '
 HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.zsh_history
@@ -22,14 +22,9 @@ source "${ZINIT_HOME}/zinit.zsh"
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
-zinit light Aloxaf/fzf-tab
 zinit ice lucid wait'0'
 zinit light joshskidmore/zsh-fzf-history-search
 
 
 autoload -U compinit && compinit
 zinit cdreplay -q
-
-# Tab Previewing
-zstyle ":fzf-tab:*" use-fzf-default-opts yes
-zstyle ":fzf-tab:complete:*" fzf-preview "ls -a --color=always \${realpath}"
